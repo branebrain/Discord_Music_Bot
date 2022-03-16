@@ -16,4 +16,5 @@ gen/**
 .gradle/
 build/
 bin/
-AzureVault.java
+src/main/java/mbot/AzureVault.java
+
