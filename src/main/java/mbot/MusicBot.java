@@ -3,15 +3,17 @@ package mbot;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
+import java.util.Scanner;
+
 //The MusicBot class is the primary class for running the discord bot
 
 public class MusicBot {
 
     public static void main(String[] args) {
 
-        String secret = "DISCORD-API-KEY";
-        String token = Vault.getValue(secret);
-        System.out.println(token);
+        //String secret = "DISCORD-API-KEY";
+        //String token = Vault.getValue(secret);
+        String token = System.getenv("DISCORD_API_TOKEN");
         DiscordApi api = new DiscordApiBuilder()
                 .setToken(token)
                 .login().join();
