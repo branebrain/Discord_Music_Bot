@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
 group 'org.example'
@@ -20,7 +20,9 @@ dependencies {
     implementation 'com.azure:azure-security-keyvault-secrets:4.4.0-beta.5'
     implementation 'com.azure:azure-identity:1.5.0-beta.1'
 }
-
+application{
+    mainClass = 'mbot.MusicBot'
+}
 test {
     useJUnitPlatform()
 }
