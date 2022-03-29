@@ -20,9 +20,13 @@ public class Responder  implements SlashCommandCreateListener {
             String newLink = getNewLink(
                     interaction.getOptionStringValueByName("platform").orElse(null),
                     interaction.getOptionStringValueByName("link").orElse(null));
-            interaction.createImmediateResponder()
-                    .setContent(newLink)
-                    .respond();
+            interaction.respondLater().thenAccept(interactionOriginalResponseUpdater -> {
+                //interactionOriginalResponseUpdater.setContent("Attempting to convert now.").update();
+                interaction.createFollowupMessageBuilder()
+                        .setContent(newLink)
+                        .send();
+                    });
+
         }
     }
 
