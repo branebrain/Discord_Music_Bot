@@ -17,11 +17,11 @@ public class Responder  implements SlashCommandCreateListener {
     public void onSlashCommandCreate(SlashCommandCreateEvent event){
         SlashCommandInteraction interaction = event.getSlashCommandInteraction();
         if (interaction.getCommandName().equals("convert")){
-            String newLink = getNewLink(
-                    interaction.getOptionStringValueByName("platform").orElse(null),
-                    interaction.getOptionStringValueByName("link").orElse(null));
             interaction.respondLater().thenAccept(interactionOriginalResponseUpdater -> {
-                //interactionOriginalResponseUpdater.setContent("Attempting to convert now.").update();
+                interactionOriginalResponseUpdater.setContent("Attempting to convert now.").update();
+                String newLink = getNewLink(
+                        interaction.getOptionStringValueByName("platform").orElse(null),
+                        interaction.getOptionStringValueByName("link").orElse(null));
                 interaction.createFollowupMessageBuilder()
                         .setContent(newLink)
                         .send();
