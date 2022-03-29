@@ -12,15 +12,14 @@ in BotCommands.java
 */
 
 public class Responder  implements SlashCommandCreateListener {
-public HashMap<String, String> commandInputs = new HashMap<>();
 
     @Override
     public void onSlashCommandCreate(SlashCommandCreateEvent event){
         SlashCommandInteraction interaction = event.getSlashCommandInteraction();
         if (interaction.getCommandName().equals("convert")){
-             commandInputs.put("platform", interaction.getOptionStringValueByName("platform").orElse(null));
-             commandInputs.put("link", interaction.getOptionStringValueByName("link").orElse(null));
-            String newLink = getNewLink(commandInputs.get("platform"), commandInputs.get("link"));
+            String newLink = getNewLink(
+                    interaction.getOptionStringValueByName("platform").orElse(null),
+                    interaction.getOptionStringValueByName("link").orElse(null));
             interaction.createImmediateResponder()
                     .setContent(newLink)
                     .respond();

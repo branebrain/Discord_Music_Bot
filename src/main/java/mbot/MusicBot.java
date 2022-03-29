@@ -13,8 +13,6 @@ public class MusicBot {
 
     public static void main(String[] args) {
 
-        //String secret = "DISCORD-API-KEY";
-        //String token = Vault.getValue(secret);
         String token = System.getenv("DISCORD_API_TOKEN");
         DiscordApi api = new DiscordApiBuilder()
                 .setToken(token)
