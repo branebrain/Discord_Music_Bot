@@ -2,12 +2,14 @@ package mbot;
 
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
-
-import java.util.Scanner;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 //The MusicBot class is the primary class for running the discord bot
 
 public class MusicBot {
+
+    private static final Logger logger = LogManager.getLogger(MusicBot.class);
 
     public static void main(String[] args) {
 
