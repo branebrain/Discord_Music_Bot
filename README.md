@@ -19,7 +19,7 @@ It is implemented with slash commands so Discord will help you fill in the input
 ## Version History
 
 * 1.1
-    * Changes responder from an instant responder with a 3 second time to a respond later. This fixes an issue with the bot not responding when the API call took longer than 3 seconds.
+    * Changes responder from an instant responder with a 3 second time-out to a respond later. This fixes an issue with the bot not responding when the API call took longer than 3 seconds.
 * 1.0
     * Initial Release
 
