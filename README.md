@@ -6,8 +6,7 @@ This project was created to make it easier to share music links through Discord.
 
 ### Add to your server
 
-Use this link to invite the bot to your server:  
-[Bot Invite Link](https://discord.com/oauth2/authorize?client_id=950171115270070312&scope=applications.commands%20bot&permissions=0)
+Use this link to invite the bot to your server: [Bot Invite Link](https://discord.com/oauth2/authorize?client_id=950171115270070312&scope=applications.commands%20bot&permissions=0)
 
 ### How to use once invited
 
@@ -17,13 +16,10 @@ There is only one command for this bot:
 ```
 It is implemented with slash commands so Discord will help you fill in the inputs.
 
-## My Info
-
-Byron Brane  
-[Linkedin](https://www.linkedin.com/in/byronbrane/)
-
 ## Version History
 
+* 1.1
+    * Changes responder from an instant responder with a 3 second time to a respond later. This fixes an issue with the bot not responding when the API call took longer than 3 seconds.
 * 1.0
     * Initial Release
 
